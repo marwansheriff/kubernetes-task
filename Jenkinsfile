@@ -5,10 +5,10 @@ pipeline{
         stage('build'){
             steps
            { 
-            sh "docker build -t marwanmw/kube-client -f client/dockerfile ."
-            sh "docker build -t marwanmw/kube-server -f server/dockerfile ."
-            sh "docker build -t marwanmw/kube-worker -f worker/dockerfile ."
-            sh "docker build -t marwanmw/kube-nginx -f nginx/dockerfile ."
+            sh "docker build -t marwanmw/kube-client -f client/dockerfile client"
+            sh "docker build -t marwanmw/kube-server -f server/dockerfile server"
+            sh "docker build -t marwanmw/kube-worker -f worker/dockerfile worker"
+            sh "docker build -t marwanmw/kube-nginx -f nginx/dockerfile nginx"
             }
         }
         stage('docker login'){
